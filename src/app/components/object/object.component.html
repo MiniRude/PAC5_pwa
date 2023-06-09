@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="btn-back div-btn">
+        <a style="margin-bottom: 20px;" class="btn btn-danger" routerLink="/">Back</a>
+    </div>
+    <div *ngIf="object" class="div-text">
+        <mat-accordion>
+            <mat-expansion-panel hideToggle>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                    <p><strong>Author:</strong> {{ object.author }}</p>
+                </mat-panel-title>
+                <mat-panel-description>
+                    CLICK FOR SHOW DETAILS
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+                <img mat-card-image style="width: 80%; height: 80%;" class="rounded" src="{{object.download_url}}" alt="">
+                <p><strong>Identifier:</strong> {{ object.id }}</p>
+                <p><strong>Size:</strong> {{ object.width }}</p>
+                <p><strong>Url:</strong> {{ object.url }}</p>
+            </mat-expansion-panel>
+            <mat-expansion-panel (opened)="details = true"
+                                 (closed)="details = false">
+            </mat-expansion-panel>
+          </mat-accordion>
+    </div>    
+</div>

@@ -1,0 +1,28 @@
+<div class="back" *ngIf="state">
+    <mat-spinner class="spinner_class"></mat-spinner>
+</div>
+<div class="container">
+    <div>
+        <h1>Objects</h1>
+        <button class="button-list" mat-raised-button (click)="change(true)"><mat-icon >list_alt</mat-icon></button>
+        <button class="button-list" mat-raised-button (click)="change(false)"><mat-icon >table_chart</mat-icon></button>
+    </div>
+    <div *ngIf="type">
+        <ul class="list-group grid-list" [@cardAnimation]="lists.length">
+            <a *ngFor="let card of lists" [routerLink]="['/object', card.id]" class="list-group-item list-group-item-action">
+                <mat-card>
+                    {{card.id}} - {{card.author}}
+                </mat-card>
+            </a>
+        </ul>
+    </div>
+    <div *ngIf="!type">
+        <mat-grid-list cols="3" rowHeight="3:1"  [@cardAnimation]="lists.length"> <!-- [dataSource]="lists"-->
+            <ng-container *ngFor="let item of lists">
+                <mat-grid-tile [routerLink]="['/object', item.id]" class="grid-list">
+                    {{ item.id}} --  {{ item.author}}
+                </mat-grid-tile>
+            </ng-container>
+        </mat-grid-list>
+    </div>
+</div>

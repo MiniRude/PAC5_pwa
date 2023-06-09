@@ -1,0 +1,30 @@
+div h1 {
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    margin-right: -50%;
+}
+
+.button-list {
+    float: right;
+    margin-left: 3px;
+}
+
+.cell {
+    padding-right: 59px;
+}
+
+.back {
+    background-color: black;
+    opacity: 50%;
+}
+
+.spinner_class{   
+    position: absolute; /* or absolute */
+    top: 50%;
+    left: 50%;
+}
+
+.grid-list {
+    background-color: grey;
+}
